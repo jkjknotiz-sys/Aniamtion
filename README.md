@@ -1,6 +1,6 @@
 # Aniamtion — our Codex Animated Shorts Skill
 
-**นี่คือการแกะวิธีทำจาก [claude-animated-shorts](https://github.com/mromidev/claude-animated-shorts) เพื่อสร้างคลิปหลายหัวข้อด้วย **Codex**** — ไม่ใช่โปรแกรม Animation Engine ใหม่
+**นี่คือการแกะวิธีทำจาก [claude-animated-shorts](https://github.com/mromidev/claude-animated-shorts) เพื่อสร้างคลิปหลายหัวข้อด้วย **Codex** — ไม่ใช่โปรแกรม Animation Engine ใหม่
 
 ## ตอนนี้มีอะไรแล้ว?
 
@@ -31,20 +31,33 @@ git clone https://github.com/jkjknotiz-sys/Aniamtion.git .agents/skills/aniamtio
 ### 2. เตรียม Project Render (สำคัญ)
 ใช้ Remotion project ที่มี Three.js และ dependencies อย่าง `remotion`, `@remotion/three`, `three`, `@react-three/fiber`, `@react-three/postprocessing` และ `postprocessing` หรือโปรเจกต์ที่คุณมีอยู่แล้ว
 
-**Repo นี้ไม่ใช่ Remotion app สำเร็จรูป:** ไม่มี `package.json`, `src/index.ts`, registration/Root และ GLB assets ที่ใช้ใน Bridge เช่น `public/bridge/kenney/*.glb`. Claude ต้องตรวจแล้วเตรียมก่อน Render; สคริปต์ต้นฉบับบางตัว hardcode Windows Chrome path
+**Repo นี้ไม่ใช่ Remotion app สำเร็จรูป:** ไม่มี `package.json`, `src/index.ts`, registration/Root และ GLB assets ที่ใช้ใน Bridge เช่น `public/bridge/kenney/*.glb`. Codex ต้องตรวจแล้วเตรียมก่อน Render; สคริปต์ต้นฉบับบางตัว hardcode Windows Chrome path
 
 ตัวอย่าง bridge source จะอยู่ใน Skill; เมื่อจะใช้งานต้อง copy/integrate ไปใน Remotion project ที่คุณต้องการ Render หลีกเลี่ยงแก้ source เริ่มต้นโดยตรง
 
-### 3. ส่งวิดีโออ้างอิงให้ Claude Code **ครั้งแรก**
+
+### ตรวจ Kenney GLB 26 ชิ้นด้วย Codex (อ่านอย่างเดียว)
+ก่อนสร้างคลิปใหม่ ให้ใช้ `scripts/audit_kenney_assets.py` ตรวจชื่อไฟล์จาก `templates/bridge/world.ts`, โครงสร้าง GLB จริง และค้นหา candidate ใน pack ที่ดาวน์โหลดจากเว็บไซต์ทางการ:
+
+~~~powershell
+$skill = "$HOME\.codex\skills\aniamtion-shorts"
+git -C $skill pull --ff-only
+py "$skill\scripts\audit_kenney_assets.py" --public-dir "D:\Facebook Reel\bridge-march-thai\public" --out "D:\Facebook Reel\bridge-march-thai\out\bridge-debug\asset-audit"
+# ถ้าดาวน์โหลด ZIP/แตก pack แล้ว ให้เพิ่ม --pack "D:\PATH\TO\kenney-pack.zip" ได้ซ้ำหลายครั้ง
+~~~
+
+ผลลัพธ์: `KENNEY_ASSET_AUDIT.md`, `kenney_asset_audit.json`. Exit code 2 หมายถึงไฟล์ยังไม่ครบ/ไม่ถูกต้อง (ไม่ใช่สคริปต์เสีย); ไม่มีการคัดลอกหรือเปลี่ยนไฟล์ใด ๆ เอง การ match ชื่อและตรวจ GLB header ไม่รับรองว่าโมเดลหน้าตาเหมือนต้นฉบับ ต้องตรวจด้วยภาพและ Render อีกครั้ง
+
+### 3. ส่งวิดีโออ้างอิงให้ Codex **ครั้งแรก**
 เก็บวิดีโออ้างอิงบนเครื่อง เช่น `~/reference-videos/` ไม่ต้อง push ไฟล์ลิขสิทธิ์ขึ้น GitHub
 
 วิเคราะห์ทีละเฟรม (30 fps เป็นเป้าหมาย ถ้าคลิปต้นทางไม่ใช่ 30fps ให้รายงาน fps จริง):
 ~~~bash
 python -m pip install numpy Pillow opencv-python-headless
-python ~/.claude/skills/aniamtion-shorts/scripts/analyze_references.py --input ~/reference-videos --out ~/animation-study
+python ~/.codex/skills/aniamtion-shorts/scripts/analyze_references.py --input ~/reference-videos --out ~/animation-study
 ~~~
 
-Claude อ่าน contact sheets และรายงาน → ถอด style ของเรา → บันทึกไว้ในไฟล์ส่วนตัวของโปรเจกต์ (อย่าเขียนทับ upstream reports)
+Codex อ่าน contact sheets และรายงาน → ถอด style ของเรา → บันทึกไว้ในไฟล์ส่วนตัวของโปรเจกต์ (อย่าเขียนทับ upstream reports)
 
 ### 4. สร้างคลิป
 เปิด Codex ใน Remotion project ที่เตรียมไว้ แล้วบอก:
