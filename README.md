@@ -7,6 +7,7 @@
 - **[SKILL.md](SKILL.md)**: Agent Skill ที่ Codex อ่านเพื่อทำงานตาม Workflow ของผู้สร้าง
 - **[CODE_MAP.md](CODE_MAP.md)**: แกะบทบาทไฟล์ source ทุกตัวจากคลิป Bridge
 - **[references/OUR_STYLE_BIBLE.md](references/OUR_STYLE_BIBLE.md)**: ผลวิเคราะห์สองคลิปของเรา 3,892 เฟรม / 66 Contact Sheets (ยังรอทบทวน Hero Frames)
+- **[references/BRIDGE_RENDER_DIAGNOSTIC_TH.md](references/BRIDGE_RENDER_DIAGNOSTIC_TH.md)**: ผลการทดสอบจริงที่แก้ภาพฟ้าล้วนได้แล้ว พร้อมรายการ GLB 26 ชิ้นที่ขาด
 - **[references/TUTORIAL_TECHNIQUES_TH.md](references/TUTORIAL_TECHNIQUES_TH.md)**: แกะ Workflow ผู้สอนจากคำบรรยายพร้อมเวลา
 - **[templates/bridge/](templates/bridge/)**: โค้ด Three.js/Remotion ต้นฉบับทั้ง 13 ไฟล์ (.ts/.tsx)
 - **[templates/scripts/](templates/scripts/)**: สคริปต์ render ภาพนิ่ง, side-by-side comparison, QA และ merge งาน agent
