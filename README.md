@@ -1,10 +1,10 @@
-# Aniamtion — our Claude Animated Shorts Skill
+# Aniamtion — our Codex Animated Shorts Skill
 
-**นี่คือการแกะวิธีทำจาก [claude-animated-shorts](https://github.com/mromidev/claude-animated-shorts) เพื่อสร้างคลิปหลายหัวข้อด้วย Claude Code** — ไม่ใช่โปรแกรม Animation Engine ใหม่
+**นี่คือการแกะวิธีทำจาก [claude-animated-shorts](https://github.com/mromidev/claude-animated-shorts) เพื่อสร้างคลิปหลายหัวข้อด้วย **Codex**** — ไม่ใช่โปรแกรม Animation Engine ใหม่
 
 ## ตอนนี้มีอะไรแล้ว?
 
-- **[SKILL.md](SKILL.md)**: Skill ที่ Claude Code อ่านเพื่อทำงานตาม Workflow ของผู้สร้าง
+- **[SKILL.md](SKILL.md)**: Agent Skill ที่ Codex อ่านเพื่อทำงานตาม Workflow ของผู้สร้าง
 - **[CODE_MAP.md](CODE_MAP.md)**: แกะบทบาทไฟล์ source ทุกตัวจากคลิป Bridge
 - **[references/OUR_STYLE_BIBLE.md](references/OUR_STYLE_BIBLE.md)**: ผลวิเคราะห์สองคลิปของเรา 3,892 เฟรม / 66 Contact Sheets (ยังรอทบทวน Hero Frames)
 - **[references/TUTORIAL_TECHNIQUES_TH.md](references/TUTORIAL_TECHNIQUES_TH.md)**: แกะ Workflow ผู้สอนจากคำบรรยายพร้อมเวลา
@@ -18,14 +18,14 @@
 
 ## วิธีเอาไปใช้
 
-### 1. ติดตั้ง Claude Skill
-Clone Repo **Private** นี้ลงในที่เก็บ Claude Skills ของคุณ (ต้องล็อกอิน GitHub ที่มีสิทธิ์):
+### 1. ติดตั้ง Agent Skill ใน Codex
+สำหรับ Codex ให้ใช้ตำแหน่ง repo-local `.agents/skills/aniamtion-shorts/` หรือ Skill directory ที่ Codex ตั้งค่าไว้ โดยโฟลเดอร์ Skill ต้องมี `SKILL.md` อยู่ที่ระดับบนสุด (Repo นี้เป็น Private จึงต้องล็อกอิน GitHub ที่มีสิทธิ์):
 
 ~~~bash
-git clone https://github.com/jkjknotiz-sys/Aniamtion.git ~/.claude/skills/aniamtion-shorts
+git clone https://github.com/jkjknotiz-sys/Aniamtion.git .agents/skills/aniamtion-shorts
 ~~~
 
-หากมีพื้นที่/สิทธิ์ไม่พอ ให้ใช้ GitHub Desktop Clone Repo แล้วคัดลอกโฟลเดอร์ไปยังตำแหน่ง Claude skills ในเครื่องของคุณ
+หากติดตั้ง Skill อยู่แล้วไม่ต้องติดตั้งซ้ำ ให้ `git pull` ที่โฟลเดอร์เดิม การที่ Codex วิเคราะห์ 2 คลิปได้สำเร็จแปลว่า workflow วิเคราะห์เริ่มทำงานแล้ว แต่ยังไม่ใช่หลักฐานว่า Render ผ่าน
 
 ### 2. เตรียม Project Render (สำคัญ)
 ใช้ Remotion project ที่มี Three.js และ dependencies อย่าง `remotion`, `@remotion/three`, `three`, `@react-three/fiber`, `@react-three/postprocessing` และ `postprocessing` หรือโปรเจกต์ที่คุณมีอยู่แล้ว
@@ -46,8 +46,8 @@ python ~/.claude/skills/aniamtion-shorts/scripts/analyze_references.py --input ~
 Claude อ่าน contact sheets และรายงาน → ถอด style ของเรา → บันทึกไว้ในไฟล์ส่วนตัวของโปรเจกต์ (อย่าเขียนทับ upstream reports)
 
 ### 4. สร้างคลิป
-เปิด Claude Code ภายใน Remotion project ที่เตรียมไว้ แล้วบอก:
-"ใช้ Skill aniamtion-shorts ศึกษาคลิปอ้างอิงและ Source Code ของ Bridge จากนั้นสร้างคลิปเรื่อง [หัวข้อ] ด้วยฉากและ .ts ที่เหมาะกับเรื่องใหม่ ต้อง Render stills เทียบ reference และแก้ภาพจนผ่านก่อน Render final"
+เปิด Codex ใน Remotion project ที่เตรียมไว้ แล้วบอก:
+"ใช้ Skill aniamtion-shorts อ่าน references/OUR_STYLE_BIBLE.md ที่วิเคราะห์ไว้แล้วก่อน ไม่ต้องวิเคราะห์คลิปรถไฟ/เรือซ้ำ ตรวจ dependencies และ GLB ของ Bridge ทำให้ Render stills ต้นฉบับได้ก่อน แล้วค่อยสร้างตอนใหม่ผ่านโค้ด .ts เฉพาะเรื่อง"
 
 นี่เป็นคำสั่งเรียกใช้งานสั้น ๆ เท่านั้น **หัวใจจริงอยู่ที่ source, measurements, renderer และการแก้ภาพ**
 
@@ -55,6 +55,7 @@ Claude อ่าน contact sheets และรายงาน → ถอด sty
 
 - ✅ Skill instructions, upstream source snapshot, original QA scripts/reports are in GitHub.
 - ⏳ ยังไม่ได้ run/render ในเครื่องนี้เพื่อยืนยันว่า dependencies / 3D assets / script compatibility ใช้งานได้จริง
+- ✅ Codex ได้วิเคราะห์คลิปอ้างอิง 2 คลิป 3,892 เฟรมแล้ว; [OUR_STYLE_BIBLE.md](references/OUR_STYLE_BIBLE.md) ถูกเก็บไว้แล้วและยังรอผู้ใช้ยืนยัน hero frames
 - ⏳ ยังไม่ได้สร้าง original character และ episode ใหม่จากคลิปที่ผู้ใช้ส่ง
 - ✅ เก็บ source MIT พร้อม LICENSE; ไม่คัดลอก original reference photos/videos
 
