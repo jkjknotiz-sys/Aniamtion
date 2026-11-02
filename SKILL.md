@@ -7,6 +7,8 @@ description: Create and direct polished original stylized animated shorts using 
 
 **Goal:** reproduce the *method* shown by mromidev/claude-animated-shorts and adapt it for original stories, our own recurring characters, and new worlds. This is a source-backed Agent Skill usable by Codex, with upstream MIT source templates and analysis/QA scripts; **it is not a new animation framework**.
 
+For persistent use inside a Remotion project, copy/merge `templates/PROJECT_AGENTS.md` into the project's root as `AGENTS.md`; this project-level instruction does not replace the Skill. Never overwrite an existing AGENTS.md without merging.
+
 Read this file first, then:
 - `README.md` for installation and what is included;
 - `CODE_MAP.md` for exact source responsibilities and what changes between episodes;
