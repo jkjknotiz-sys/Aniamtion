@@ -10,14 +10,16 @@ description: Produce original stylized 2.5D characters in real 3D world short vi
 Read this file first, then:
 - `README.md` for installation and what is included;
 - `CODE_MAP.md` for exact source responsibilities and what changes between episodes;
-- `references/STYLE_BIBLE.md` and `references/reports/*.md` for the upstream study;
+- `references/OUR_STYLE_BIBLE.md` for **our provisional evidence-based rail/ship study**; ask the user to approve hero references before using its candidate art directions as fixed rules;
+- `references/STYLE_BIBLE.md` and `references/reports/*.md` for the upstream study (do not conflate their 20-video measurements with our two-video study);
 - `templates/bridge/*.ts`, `templates/bridge/Bridge.tsx` for actual proven example code;
 - `templates/scripts/*.py` for frame comparison and QA;
 - `scripts/analyze_references.py` for analyzing your own locally available example videos.
 
 ## Non-negotiable constraints
 
-1. **Source-first, not prompt-first.** Open the real modules, inspect symbols and dependencies, and render actual frames. No guesses about assets or exports.
+1. **Reference precedence:** our approved user style evidence outranks generic upstream look targets when building new episodes; the current OUR_STYLE_BIBLE is provisional, based on 2 videos and not yet human-approved. Missing external local assets such as `review_manifest.json`, `reports/methodology.md`, `evidence/01` and `evidence/02` must not be invented.
+2. **Source-first, not prompt-first.** Open the real modules, inspect symbols and dependencies, and render actual frames. No guesses about assets or exports.
 2. **Never pretend the bridge template is a generic scene engine.** `world.ts`, `build.ts`, `cast.ts` and `story.ts` contain bridge/town/soldier logic. A new topic needs appropriate geometry, painted materials, props, movements and camera staging, often in NEW .ts modules.
 3. **Keep the look code until proven otherwise.** Original drawing/shader/effects in `toon.ts`, `cardshade.ts`, `shade.ts`, `paint.ts`, `ink.ts`, `lensblur.ts` and `grade.ts` are a baseline. Verify which utilities are reusable; do not rewrite all of them just because story changed.
 4. **Original people and stories.** Study references for measurable techniques, not for copying distinctive designs/shots or distributing private video frames. Original source licensed MIT (retain LICENSE).
