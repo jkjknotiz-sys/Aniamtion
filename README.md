@@ -5,6 +5,7 @@
 ## ตอนนี้มีอะไรแล้ว?
 
 - **[SKILL.md](SKILL.md)**: Agent Skill ที่ Codex อ่านเพื่อทำงานตาม Workflow ของผู้สร้าง
+- **[templates/PROJECT_AGENTS.md](templates/PROJECT_AGENTS.md)**: ตัวอย่างไฟล์ `AGENTS.md` สำหรับบังคับให้ Codex ใช้กฎคุณภาพในทุกงานของโปรเจกต์ (คัดลอกไปไว้ที่ root ของ Remotion project)
 - **[CODE_MAP.md](CODE_MAP.md)**: แกะบทบาทไฟล์ source ทุกตัวจากคลิป Bridge
 - **[references/OUR_STYLE_BIBLE.md](references/OUR_STYLE_BIBLE.md)**: ผลวิเคราะห์สองคลิปของเรา 3,892 เฟรม / 66 Contact Sheets (ยังรอทบทวน Hero Frames)
 - **[references/BRIDGE_RENDER_DIAGNOSTIC_TH.md](references/BRIDGE_RENDER_DIAGNOSTIC_TH.md)**: ประวัติการแก้ภาพฟ้าล้วนและ GLB (ล่าสุดผู้ใช้เติม GLB 26/26 ในโปรเจกต์ท้องถิ่นแล้ว)
@@ -29,6 +30,24 @@ git clone https://github.com/jkjknotiz-sys/Aniamtion.git .agents/skills/aniamtio
 ~~~
 
 หากติดตั้ง Skill อยู่แล้วไม่ต้องติดตั้งซ้ำ ให้ `git pull` ที่โฟลเดอร์เดิม การที่ Codex วิเคราะห์ 2 คลิปได้สำเร็จแปลว่า workflow วิเคราะห์เริ่มทำงานแล้ว แต่ยังไม่ใช่หลักฐานว่า Render ผ่าน
+
+### 1.1 ทำให้ Codex ใช้บทเรียนทุกครั้งในโปรเจกต์ (สำคัญมาก)
+
+ควรคัดลอก [templates/PROJECT_AGENTS.md](templates/PROJECT_AGENTS.md) ไปเป็น `AGENTS.md` ใน **root ของ Remotion project ที่ Codex ทำงานอยู่**. Codex จะเห็นคำสั่งระดับโปรเจกต์นี้เมื่อทำงานในโฟลเดอร์ดังกล่าว และจะรู้ว่าต้องอ่าน Skill/บทเรียนก่อนออกแบบตอนใหม่. ถ้าโปรเจกต์มี AGENTS.md อยู่แล้ว **รวมเนื้อหาเข้ากับไฟล์เดิม ไม่เขียนทับ**
+
+บน Windows PowerShell:
+~~~powershell
+$skill = "$HOME\.codex\skills\aniamtion-shorts"
+$project = "D:\Facebook Reel\bridge-march-thai"
+git -C $skill pull --ff-only
+if (Test-Path "$project\AGENTS.md") {
+  Write-Host "มี AGENTS.md อยู่แล้ว: เปิดและรวมกฎด้วยตนเอง อย่าเขียนทับ"
+} else {
+  Copy-Item "$skill\templates\PROJECT_AGENTS.md" "$project\AGENTS.md"
+}
+~~~
+
+จุดนี้ช่วยให้ **Codex ใช้กฎซ้ำเมื่อทำงานโปรเจกต์เดียวกัน** แต่ไม่ได้เป็นการฝึกโมเดลใหม่; เมื่อมีข้อผิดพลาดใหม่ ต้องเก็บ lesson และผ่านการ rerender ก่อนอ้างว่าแก้สำเร็จ
 
 ### 2. เตรียม Project Render (สำคัญ)
 ใช้ Remotion project ที่มี Three.js และ dependencies อย่าง `remotion`, `@remotion/three`, `three`, `@react-three/fiber`, `@react-three/postprocessing` และ `postprocessing` หรือโปรเจกต์ที่คุณมีอยู่แล้ว
