@@ -15,6 +15,7 @@ Read this file first, then:
 - `templates/bridge/*.ts`, `templates/bridge/Bridge.tsx` for actual proven example code;
 - `templates/scripts/*.py` for frame comparison and QA;
 - `scripts/analyze_references.py` for analyzing your own locally available example videos.
+- `references/BRIDGE_RENDER_DIAGNOSTIC_TH.md` for the **user-verified** Remotion readiness bug, isolated compatibility fix, and 26 missing GLB checklist (not yet ported as production code).
 
 ## Non-negotiable constraints
 
