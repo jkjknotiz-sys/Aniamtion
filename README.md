@@ -1,13 +1,15 @@
 # Aniamtion — our Codex Animated Shorts Skill
 
-**นี่คือการแกะวิธีทำจาก [claude-animated-shorts](https://github.com/mromidev/claude-animated-shorts) เพื่อสร้างคลิปหลายหัวข้อด้วย **Codex** — ไม่ใช่โปรแกรม Animation Engine ใหม่
+**นี่คือการแกะวิธีทำจาก [claude-animated-shorts](https://github.com/mromidev/claude-animated-shorts) เพื่อสร้างคลิปหลายหัวข้อด้วย Codex** — ไม่ใช่โปรแกรม Animation Engine ใหม่
 
 ## ตอนนี้มีอะไรแล้ว?
 
 - **[SKILL.md](SKILL.md)**: Agent Skill ที่ Codex อ่านเพื่อทำงานตาม Workflow ของผู้สร้าง
 - **[CODE_MAP.md](CODE_MAP.md)**: แกะบทบาทไฟล์ source ทุกตัวจากคลิป Bridge
 - **[references/OUR_STYLE_BIBLE.md](references/OUR_STYLE_BIBLE.md)**: ผลวิเคราะห์สองคลิปของเรา 3,892 เฟรม / 66 Contact Sheets (ยังรอทบทวน Hero Frames)
-- **[references/BRIDGE_RENDER_DIAGNOSTIC_TH.md](references/BRIDGE_RENDER_DIAGNOSTIC_TH.md)**: ผลการทดสอบจริงที่แก้ภาพฟ้าล้วนได้แล้ว พร้อมรายการ GLB 26 ชิ้นที่ขาด
+- **[references/BRIDGE_RENDER_DIAGNOSTIC_TH.md](references/BRIDGE_RENDER_DIAGNOSTIC_TH.md)**: ประวัติการแก้ภาพฟ้าล้วนและ GLB (ล่าสุดผู้ใช้เติม GLB 26/26 ในโปรเจกต์ท้องถิ่นแล้ว)
+- **[references/PRODUCTION_QUALITY_STANDARD.md](references/PRODUCTION_QUALITY_STANDARD.md)**: กฎบังคับ Storyboard, Physical Acting, Cinematic Composition, Quality Gates และวิธีเก็บบทเรียนข้ามตอน
+- **[references/LESSONS_RED_BUTTON_TOWN.md](references/LESSONS_RED_BUTTON_TOWN.md)**: บทเรียนจาก Storyboard 12 ช็อตเรื่องปุ่มแดงที่ผู้ใช้ไม่พอใจ
 - **[references/TUTORIAL_TECHNIQUES_TH.md](references/TUTORIAL_TECHNIQUES_TH.md)**: แกะ Workflow ผู้สอนจากคำบรรยายพร้อมเวลา
 - **[templates/bridge/](templates/bridge/)**: โค้ด Three.js/Remotion ต้นฉบับทั้ง 13 ไฟล์ (.ts/.tsx)
 - **[templates/scripts/](templates/scripts/)**: สคริปต์ render ภาพนิ่ง, side-by-side comparison, QA และ merge งาน agent
@@ -59,7 +61,9 @@ python ~/.codex/skills/aniamtion-shorts/scripts/analyze_references.py --input ~/
 
 Codex อ่าน contact sheets และรายงาน → ถอด style ของเรา → บันทึกไว้ในไฟล์ส่วนตัวของโปรเจกต์ (อย่าเขียนทับ upstream reports)
 
-### 4. สร้างคลิป
+### 4. สร้างคลิปโดยใช้บทเรียนจากงานเก่า
+ก่อนทำทุกตอน Codex ต้องอ่าน `references/PRODUCTION_QUALITY_STANDARD.md` และ `references/LESSONS_RED_BUTTON_TOWN.md` ผ่าน `SKILL.md` เสมอ. ตรวจ Storyboard ไม่ใช่แค่จำนวนภาพ แต่รวม acting/prop contact, twist reveal, composition และคุณภาพจริงจากการ Render ด้วย. หากเห็นปัญหา ให้ตั้งสถานะ BLOCKED_ACTION หรือ BLOCKED_VISUAL แล้วแก้/ตรวจซ้ำก่อน full render.
+
 เปิด Codex ใน Remotion project ที่เตรียมไว้ แล้วบอก:
 "ใช้ Skill aniamtion-shorts อ่าน references/OUR_STYLE_BIBLE.md ที่วิเคราะห์ไว้แล้วก่อน ไม่ต้องวิเคราะห์คลิปรถไฟ/เรือซ้ำ ตรวจ dependencies และ GLB ของ Bridge ทำให้ Render stills ต้นฉบับได้ก่อน แล้วค่อยสร้างตอนใหม่ผ่านโค้ด .ts เฉพาะเรื่อง"
 
@@ -68,9 +72,10 @@ Codex อ่าน contact sheets และรายงาน → ถอด styl
 ## หมายเหตุสถานะ
 
 - ✅ Skill instructions, upstream source snapshot, original QA scripts/reports are in GitHub.
-- ⏳ ยังไม่ได้ run/render ในเครื่องนี้เพื่อยืนยันว่า dependencies / 3D assets / script compatibility ใช้งานได้จริง
+- ✅ ผู้ใช้ทดสอบ Render Bridge 90 เฟรมและ Empty City 120 เฟรมผ่านในโปรเจกต์ Remotion ท้องถิ่น รวมถึงคืนโมเดล GLB 26/26 แล้ว (ไม่ได้อัปโหลดโมเดลหรือ runtime ทั้งชุดไว้ใน Skill repo)
 - ✅ Codex ได้วิเคราะห์คลิปอ้างอิง 2 คลิป 3,892 เฟรมแล้ว; [OUR_STYLE_BIBLE.md](references/OUR_STYLE_BIBLE.md) ถูกเก็บไว้แล้วและยังรอผู้ใช้ยืนยัน hero frames
-- ⏳ ยังไม่ได้สร้าง original character และ episode ใหม่จากคลิปที่ผู้ใช้ส่ง
+- ✅ มี Storyboard เมืองปุ่มแดง 12 ช็อต ความยาวประมาณ 54 วินาทีจาก Codex แต่ผู้ใช้ **ยังไม่พอใจคุณภาพ** และไม่มีหลักฐานว่า Full Video ผ่านการอนุมัติ
+- ⏳ ตัวละครต้นฉบับของช่องและความสม่ำเสมอเชิงศิลป์ของหลายตอนยังไม่ผ่าน human approval
 - ✅ เก็บ source MIT พร้อม LICENSE; ไม่คัดลอก original reference photos/videos
 
 **แผนเก่าที่ไม่ตรงโจทย์** ถูกเก็บไว้ที่ [archive/early-planning/](archive/early-planning/) เพื่อไม่ให้ปะปนกับ Skill จริง; ให้ยึด [SKILL.md](SKILL.md) และ [CODE_MAP.md](CODE_MAP.md) เป็นหลัก
