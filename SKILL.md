@@ -5,7 +5,7 @@ description: Produce original stylized 2.5D characters in real 3D world short vi
 
 # Aniamtion Shorts — source-grounded skill
 
-**Goal:** reproduce the *method* shown by mromidev/claude-animated-shorts and adapt it for original stories, our own recurring characters, and new worlds. This is a working Claude Skill with upstream MIT source templates and analysis/QA scripts; **it is not a new animation framework**.
+**Goal:** reproduce the *method* shown by mromidev/claude-animated-shorts and adapt it for original stories, our own recurring characters, and new worlds. This is a source-backed Agent Skill usable by Codex, with upstream MIT source templates and analysis/QA scripts; **it is not a new animation framework**.
 
 Read this file first, then:
 - `README.md` for installation and what is included;
@@ -81,7 +81,7 @@ Read this file first, then:
 
 ## What counts as a successful Skill
 
-A user can invoke it in Claude Code, and Claude can read the included **real sources and scripts**, study references, plan/build a subject-specific new .ts scene in a configured local Remotion project, render a 4s sample, inspect side-by-sides, and improve it. Success needs an actual rendered test; **having these files in GitHub alone does not prove visual parity**.
+A user can invoke it in Codex, and Codex can read the included **real sources and scripts**, study references, plan/build a subject-specific new .ts scene in a configured local Remotion project, render a 4s sample, inspect side-by-sides, and improve it. Success needs an actual rendered test; **having these files in GitHub alone does not prove visual parity**.
 
 ## Version / upstream
 This Skill adapts [mromidev/claude-animated-shorts](https://github.com/mromidev/claude-animated-shorts) commit `e3b817b6afc6cd413466d43f11ba31209e034bbf`. Copyright/license preserved in `LICENSE`; original unmodified skill snapshot at `upstream/SKILL.md`. No reference JPEGs/videos copied to this repository.
