@@ -6,6 +6,7 @@
 
 - **[SKILL.md](SKILL.md)**: Skill ที่ Claude Code อ่านเพื่อทำงานตาม Workflow ของผู้สร้าง
 - **[CODE_MAP.md](CODE_MAP.md)**: แกะบทบาทไฟล์ source ทุกตัวจากคลิป Bridge
+- **[references/TUTORIAL_TECHNIQUES_TH.md](references/TUTORIAL_TECHNIQUES_TH.md)**: แกะ Workflow ผู้สอนจากคำบรรยายพร้อมเวลา
 - **[templates/bridge/](templates/bridge/)**: โค้ด Three.js/Remotion ต้นฉบับทั้ง 13 ไฟล์ (.ts/.tsx)
 - **[templates/scripts/](templates/scripts/)**: สคริปต์ render ภาพนิ่ง, side-by-side comparison, QA และ merge งาน agent
 - **[templates/audio/](templates/audio/)**: โค้ดเสียง/ดนตรี/SFX จากต้นฉบับ
@@ -56,7 +57,7 @@ Claude อ่าน contact sheets และรายงาน → ถอด sty
 - ⏳ ยังไม่ได้สร้าง original character และ episode ใหม่จากคลิปที่ผู้ใช้ส่ง
 - ✅ เก็บ source MIT พร้อม LICENSE; ไม่คัดลอก original reference photos/videos
 
-**เอกสารที่เหลือจากการคุยเดิม** เช่น FINAL_DECISION.md, IMPLEMENTATION_BOARD.md, prompts/ ไม่ใช่แหล่งหลักของ Skill และไม่ใช่งานที่เราจะพัฒนาต่อเป็น Animation Engine; ยึด [SKILL.md](SKILL.md) และ [CODE_MAP.md](CODE_MAP.md) แทน
+**แผนเก่าที่ไม่ตรงโจทย์** ถูกเก็บไว้ที่ [archive/early-planning/](archive/early-planning/) เพื่อไม่ให้ปะปนกับ Skill จริง; ให้ยึด [SKILL.md](SKILL.md) และ [CODE_MAP.md](CODE_MAP.md) เป็นหลัก
 
 ### Upstream provenance
 From `mromidev/claude-animated-shorts` commit `e3b817b6afc6cd413466d43f11ba31209e034bbf`. Copied code/docs remain under upstream MIT terms. Reference images/sheets intentionally excluded.
