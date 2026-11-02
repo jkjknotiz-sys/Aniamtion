@@ -27,6 +27,8 @@ We are **adapting the process and existing source techniques of mromidev/claude-
 - User-reviewable storyboard is a deliverable when requested. If the user asked to approve it, STOP before final video. Otherwise, proceed only after self-review gates PASS and flag subjective approval as pending.
 - Preserve proven Bridge look code/shaders and original source. Make new `.ts/.tsx` for episode-specific worlds, props, camera, actor behavior and action mechanisms.
 - Do not spend time reanalyzing previously studied rail/ship references unless a *specific* new evidence gap requires it.
+- **Reuse the existing local Asset Library first**: inspect `ASSET_CATALOG.md`, `asset-manifest.json`, `src/asset-library/`, `public/asset-library/` when present. Do not download duplicate GLBs. Read entry license/bounds/style previews/readiness scope. The existing 36 GLBs passed technical *static scenery* tests; they are not automatically hero-closeup/rig/hand-contact-ready. If the shot needs articulated interaction, create and test the proper pivots/geometry/actor contact in scene code.
+- For every shot list what catalog items are reused, what must be built, and what is unsuitable (wrong style/detail/rig). Validate in final shot context, not just asset showroom.
 - Report artistic quality separately from technical video QA.
 
 ## Make improvements persist
