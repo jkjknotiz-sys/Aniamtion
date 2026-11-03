@@ -8,9 +8,10 @@ When handling storyboards, 3D animation, video rendering or quality fixes **in t
 
 1. `aniamtion-shorts/SKILL.md`
 2. `aniamtion-shorts/references/PRODUCTION_QUALITY_STANDARD.md`
-3. `aniamtion-shorts/references/LESSONS_RED_BUTTON_TOWN.md`
-4. `aniamtion-shorts/references/OUR_STYLE_BIBLE.md`
-5. Actual source/renderer code for this working Remotion project
+3. `aniamtion-shorts/references/FULL_SCENE_AND_CAST_STANDARD.md`
+4. `aniamtion-shorts/references/LESSONS_RED_BUTTON_TOWN.md`
+5. `aniamtion-shorts/references/OUR_STYLE_BIBLE.md`
+6. Actual source/renderer code for this working Remotion project
 
 Locate the installed Skill. If it cannot be found, report the path issue instead of silently inventing its content.
 
@@ -21,7 +22,9 @@ We are **adapting the process and existing source techniques of mromidev/claude-
 ## Acceptance rules
 
 - A topic alone is sufficient to PLAN: generate fact-checked original story (if factual), storyboard, original scene-specific geometry, character acting, lighting, camera and action specs.
-- Have shot purpose, focal hierarchy, depth, acting, visual variety, material quality and an intentional reveal. Do not rely on a static-looking shot count.
+- Have shot purpose, focal hierarchy, depth, acting, visual variety, material quality and an intentional reveal.
+- **Every story-character counts:** parse the script into a cast table, including speaking supporting roles and visual extras. For each named actor, verify original design, rendering module, expression/acting, shot presence, staging, eye-lines and continuity. Do not simply duplicate Natee for everyone; Natee v2/v2-acting is not the entire cast.
+- **Whole-scene look pass:** before full render deliver `CAST_BIBLE.md`, `SHOT_VISUAL_PLAN.md`, `SCENE_LOOK_REVIEW.md`; compare representative actual Render frames against matched references for motivated key/fill/rim lighting, color harmony, environment richness, foreground/midground/background, character-to-scene shading, props, composition and shot-to-shot consistency. Flag `CAST_MISSING`/`BLOCKED_VISUAL` for critical errors. Do not rely on a static-looking shot count.
 - **Physical interactions are a blocking gate.** For each key press/pickup/door/lever/vehicle impact, prove anticipation → geometric contact → prop actuation → consequence → settle with multiple rendered frames. If billboard actors cannot do it, change the camera or create suitable local 3D parts; do not pretend a floating hand is a press.
 - Before full rendering, render storyboard hero frames and a short motion proof of the hardest action. Show and fix the artistic failings. A correct MP4 is not necessarily a good-looking one.
 - User-reviewable storyboard is a deliverable when requested. If the user asked to approve it, STOP before final video. Otherwise, proceed only after self-review gates PASS and flag subjective approval as pending.
