@@ -10,6 +10,7 @@
 - **[references/OUR_STYLE_BIBLE.md](references/OUR_STYLE_BIBLE.md)**: ผลวิเคราะห์สองคลิปของเรา 3,892 เฟรม / 66 Contact Sheets (ยังรอทบทวน Hero Frames)
 - **[references/BRIDGE_RENDER_DIAGNOSTIC_TH.md](references/BRIDGE_RENDER_DIAGNOSTIC_TH.md)**: ประวัติการแก้ภาพฟ้าล้วนและ GLB (ล่าสุดผู้ใช้เติม GLB 26/26 ในโปรเจกต์ท้องถิ่นแล้ว)
 - **[references/FULL_SCENE_AND_CAST_STANDARD.md](references/FULL_SCENE_AND_CAST_STANDARD.md)**: มาตรฐานการจัดแสง/สี/องค์ประกอบทั้งฉาก และดูแลตัวละครทุกตัวที่อยู่ในบท ไม่ใช่ตรวจ Natee คนเดียว
+- **[references/NEXT_EPISODE_WORKFLOW_TH.md](references/NEXT_EPISODE_WORKFLOW_TH.md)**: Workflow ผลิตคลิปเรื่องถัดไปจากหัวข้อจริงของผู้ใช้ โดยนำบทเรียนแสง สี กล้อง ตัวละครรอง และ Asset Library มาใช้ตั้งแต่ Storyboard จนถึง MP4
 - **[references/PRODUCTION_QUALITY_STANDARD.md](references/PRODUCTION_QUALITY_STANDARD.md)**: กฎบังคับ Storyboard, Physical Acting, Cinematic Composition, Quality Gates และวิธีเก็บบทเรียนข้ามตอน
 - **[references/ASSET_LIBRARY_STATUS_TH.md](references/ASSET_LIBRARY_STATUS_TH.md)**: สรุป Asset Library ของ Codex จำนวน 36 ชิ้น (พร้อมแบบ static scenery), วิธีเลือกใช้จริง และข้อจำกัด Rig/Interaction; Asset จริงเก็บในโปรเจกต์ท้องถิ่น
 - **[references/LESSONS_RED_BUTTON_TOWN.md](references/LESSONS_RED_BUTTON_TOWN.md)**: บทเรียนจาก Storyboard 12 ช็อตเรื่องปุ่มแดงที่ผู้ใช้ไม่พอใจ
