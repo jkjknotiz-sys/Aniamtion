@@ -22,6 +22,7 @@ Read this file first, then:
 - **MANDATORY on EVERY new episode:** `references/PRODUCTION_QUALITY_STANDARD.md` — physical contact/acting, cinematic art direction, storyboard, reveal contract, quality gates and learning loop.
 - **MANDATORY known failure case:** `references/LESSONS_RED_BUTTON_TOWN.md` — 12-shot button/toy-town storyboard with user-reported implausible button press and insufficient visual appeal. Apply *generalized rules*, not the episode's props/story.
 - **MANDATORY whole-scene and casting standard:** `references/FULL_SCENE_AND_CAST_STANDARD.md` — audit every actor in the script, not only Natee; stage ensemble blocking, lighting/color script, shot composition and reference-matched visual review.
+- **MANDATORY for the next user-chosen episode:** `references/NEXT_EPISODE_WORKFLOW_TH.md` — use a supplied title as the actual episode topic, use all characters and art-direction lessons from the prior Red Button Town visual pass, make representative renderer-backed storyboard frames, preserve publish-first when requested, then produce actual video when authorized. Do not make another red-button demo by default.
 - **MANDATORY asset-library lesson:** `references/ASSET_LIBRARY_STATUS_TH.md`. Use the **local** project `asset-manifest.json`, `ASSET_CATALOG.md` and `src/asset-library/` if they exist, before building/downloading any assets. Confirm exact paths and import APIs by inspecting the user's actual project; do not assume the asset files live inside the Skill repository.
 
 ## Non-negotiable constraints
