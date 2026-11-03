@@ -9,9 +9,10 @@ When handling storyboards, 3D animation, video rendering or quality fixes **in t
 1. `aniamtion-shorts/SKILL.md`
 2. `aniamtion-shorts/references/PRODUCTION_QUALITY_STANDARD.md`
 3. `aniamtion-shorts/references/FULL_SCENE_AND_CAST_STANDARD.md`
-4. `aniamtion-shorts/references/LESSONS_RED_BUTTON_TOWN.md`
-5. `aniamtion-shorts/references/OUR_STYLE_BIBLE.md`
-6. Actual source/renderer code for this working Remotion project
+4. `aniamtion-shorts/references/NEXT_EPISODE_WORKFLOW_TH.md`
+5. `aniamtion-shorts/references/LESSONS_RED_BUTTON_TOWN.md`
+6. `aniamtion-shorts/references/OUR_STYLE_BIBLE.md`
+7. Actual source/renderer code for this working Remotion project
 
 Locate the installed Skill. If it cannot be found, report the path issue instead of silently inventing its content.
 
