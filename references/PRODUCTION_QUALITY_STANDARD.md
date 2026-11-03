@@ -50,6 +50,10 @@
 
 **Gate A (blocker):** ภาพเบลอ/แบน/โล่งโดยไม่มีเหตุทางเรื่อง, focal point อ่านไม่ออก, มุมภาพผิด anatomy, repetitive scene ภายใต้ช็อตสำคัญ หรือ twist ถูกเปิดเผยเร็วกว่าที่ตั้งใจ → recompose/reshoot ไม่ใช่ปล่อยผ่านเพราะ Technical QA ผ่าน
 
+### กฎเพิ่มเติม: แสง สี องค์ประกอบ และตัวละครทุกตัวในบท
+
+อ่าน **[`FULL_SCENE_AND_CAST_STANDARD.md`](FULL_SCENE_AND_CAST_STANDARD.md)** ทุกตอน: สร้าง `CAST_BIBLE.md` (ทุกตัวละครในบทไม่ใช่แค่ตัวหลัก), `SHOT_VISUAL_PLAN.md` (world-space blocking, composition, key/fill/rim, palette, foreground/midground/background, asset choices) และ `SCENE_LOOK_REVIEW.md` (side-by-side จาก Renderer จริง รวมช็อตที่มีนักแสดง 2+ คน). ห้ามข้ามตัวละครพูด/ตัวละครประกอบที่บทระบุและอย่าทำให้ทุกคนเป็น Natee เปลี่ยนสีเสื้อ. ตรวจ continuity, eye-lines, contact shadows และ light integration ครบทั้งฉาก. ถ้าหาย/ผิดชัดให้ `CAST_MISSING` / `BLOCKED_VISUAL` ก่อน render เต็ม
+
 ## 4. Twist/reveal staging
 
 ถ้าเป็นเรื่องหักมุมให้เขียน **reveal contract**:
@@ -70,7 +74,7 @@
 - Outcome: one-page visual/story intent + list of production risks
 
 **Gate 1 — Story/Storyboard signoff**
-- Storyboard แต่ละ shot แสดงเรื่อง/จุดหักมุม/มุมกล้อง/แสง/ตัวละคร/วัตถุ/interaction
+- Storyboard แต่ละ shot แสดงเรื่อง/จุดหักมุม/มุมกล้อง/แสง/ตัวละคร **ทุกตัวที่ปรากฏตามบท** /วัตถุ/interaction และมี CAST_BIBLE + SHOT_VISUAL_PLAN
 - Rendered storyboard frames จาก Three.js (ถ้ามี project พร้อม) และ review sheet เทียบ approved shot-compatible references
 - **Screen images alone are insufficient for physical actions**: ต้องมี action keyframes สี่สถานะขึ้นไปในช็อต interaction
 - Codex ต้อง *วิจารณ์ภาพตัวเองเชิงรูปธรรม* และติดป้าย REWORK เมื่อยังไม่สวย/ไม่สมจริง; ไม่เขียน "PASS" แค่ไฟล์ครบ
@@ -79,7 +83,7 @@
 **Gate 2 — Hero-shot look & action tests**
 - สำหรับช็อตสำคัญอย่างน้อย 1 ภาพ wide, 1 character, 1 environmental detail, 1 physical interaction, 1 reveal (เฉพาะประเภทที่เรื่องมี)
 - Render 4–8 วินาทีของ action ที่ยาก + before/contact/after frame sequence
-- เปรียบเทียบ side-by-side, ตรวจ silhouette, depth, expression, gestures, contact, shadows, moving camera, texture detail, foreground scale, palette
+- เปรียบเทียบ side-by-side, ตรวจ silhouette, depth, expression, gestures, contact, shadows, moving camera, texture detail, foreground scale, palette; ตรวจ wide/multi-actor/hero/environment/special-light frames และ full-scene interaction/eye-lines
 - ปัญหา blocker ทุกข้อบันทึก frame/time + symptom + source file/function + proposed technical fix + retest result
 
 **Gate 3 — Full production**
